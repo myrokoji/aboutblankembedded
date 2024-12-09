@@ -1,0 +1,63 @@
+// about-blank-embedder.js
+
+// Create and style the main webpage dynamically
+const createPage = () => {
+    document.body.style.margin = "0";
+    document.body.style.fontFamily = "Arial, sans-serif";
+    document.body.style.display = "flex";
+    document.body.style.flexDirection = "column";
+    document.body.style.alignItems = "center";
+    document.body.style.justifyContent = "center";
+    document.body.style.height = "100vh";
+    document.body.style.backgroundColor = "#f0f0f0";
+    document.body.style.color = "#333";
+
+    const title = document.createElement("h1");
+    title.textContent = "About:Blank Embedder";
+    title.style.color = "#444";
+    document.body.appendChild(title);
+
+    const description = document.createElement("p");
+    description.textContent = "Click the button below to open an about:blank page.";
+    document.body.appendChild(description);
+
+    const button = document.createElement("button");
+    button.textContent = "Open about:blank";
+    button.style.margin = "20px";
+    button.style.padding = "10px 20px";
+    button.style.fontSize = "16px";
+    button.style.cursor = "pointer";
+    button.style.backgroundColor = "#007bff";
+    button.style.color = "white";
+    button.style.border = "none";
+    button.style.borderRadius = "5px";
+    button.style.transition = "background-color 0.3s";
+    button.onmouseover = () => button.style.backgroundColor = "#0056b3";
+    button.onmouseout = () => button.style.backgroundColor = "#007bff";
+    button.onclick = openAboutBlank;
+    document.body.appendChild(button);
+
+    const separator = document.createElement("hr");
+    separator.style.width = "80%";
+    separator.style.margin = "20px 0";
+    document.body.appendChild(separator);
+
+    const iframeTitle = document.createElement("h2");
+    iframeTitle.textContent = "Embedded about:blank in an iframe:";
+    document.body.appendChild(iframeTitle);
+
+    const iframe = document.createElement("iframe");
+    iframe.src = "about:blank";
+    iframe.style.width = "80%";
+    iframe.style.height = "500px";
+    iframe.style.border = "1px solid black";
+    iframe.style.borderRadius = "5px";
+    document.body.appendChild(iframe);
+};
+
+const openAboutBlank = () => {
+    window.open('about:blank', '_blank');
+};
+
+// Initialize the webpage
+createPage();
