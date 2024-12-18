@@ -61,7 +61,7 @@
                 return;
             }
 
-            const newWindow = window.open('about:blank', '_blank');
+            const newWindow = window.open('Home', '_blank');
             if (newWindow) {
                 console.log('New about:blank window opened successfully.');
                 newWindow.document.write(`<!DOCTYPE html><html><head><title>My Drive - Google Drive</title><a href="Google_Drive_icon_(2020).svg" type="image/png"></head><body><iframe src="${url}" style="width:100%; height:100vh; border:none;"></iframe></body></html>`);
