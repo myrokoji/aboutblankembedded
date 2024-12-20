@@ -47,11 +47,11 @@
 <body>
     <h1>Open Link in a New about:blank Page</h1>
     <p>Enter a URL below and click the button to open it in a new <code>about:blank</code> page:</p>
-    <input type="text" id="urlInput" placeholder="Remember https://. To access everything use https://thebeta.duckdns.org">
+    <input type="text" id="urlInput" placeholder="Remember https://. To access everything use https://shadow-ai.app">
     <button onclick="openLink()">Open Link</button>
 
     <script>
-        // Cache for the window object to reuse
+      
         let newWindow = null;
 
         function openLink() {
@@ -64,13 +64,13 @@
                 return;
             }
 
-            // Reuse the new window if already opened
+     
             if (!newWindow || newWindow.closed) {
                 newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
             }
 
-            // Inject the URL directly into the iframe to reduce unnecessary writes
-            newWindow.document.body.innerHTML = '';  // Clear any previous content
+          
+            newWindow.document.body.innerHTML = '';  
             const iframe = newWindow.document.createElement('iframe');
             iframe.src = url;
             iframe.style.width = '100%';
